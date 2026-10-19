@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620">
+  <style>
+    .sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+    .mono { font-family: Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace; }
+    .curve { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 3.4s 0.3s ease-in-out forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .stop { opacity: 0; animation: up 0.6s ease-out forwards; }
+    .s1 { animation-delay: 0.30s; }
+    .s2 { animation-delay: 0.52s; }
+    .s3 { animation-delay: 0.74s; }
+    .s4 { animation-delay: 0.96s; }
+    .s5 { animation-delay: 1.18s; }
+    .s6 { animation-delay: 1.40s; }
+    .s7 { animation-delay: 1.62s; }
+    .s8 { animation-delay: 1.84s; }
+    .s9 { animation-delay: 2.06s; }
+    .s10 { animation-delay: 2.28s; }
+    .s11 { animation-delay: 2.50s; }
+    .s12 { animation-delay: 2.72s; }
+    @keyframes up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .pop { opacity: 0; transform-box: fill-box; transform-origin: center; animation: pop 0.7s cubic-bezier(.2,1.6,.4,1) forwards; }
+    .n0 { animation-delay: 3.6s; } .n1 { animation-delay: 3.8s; } .n2 { animation-delay: 4.0s; } .n3 { animation-delay: 4.2s; } .n4 { animation-delay: 4.4s; }
+    @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+    .ring { transform-box: fill-box; transform-origin: center; opacity: 0; animation: ring 2.6s 3.8s ease-out infinite; }
+    @keyframes ring { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(4); opacity: 0; } }
+    .halo { opacity: 0; animation: halo 4s 3.6s ease-in-out infinite; }
+    @keyframes halo { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+  </style>
+  <defs>
+    <clipPath id="clip"><rect width="1280" height="620" rx="18"/></clipPath>
+    <linearGradient id="trail" x1="100" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8291a0" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#e8a860"/>
+      <stop offset="1" stop-color="#62cda0"/>
+    </linearGradient>
+    <radialGradient id="burst" cx="1080" cy="300" r="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#62cda0" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#7c88ff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#7c88ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1a2330"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="1280" height="620" fill="#0b0f14"/>
+    <rect width="1280" height="620" fill="url(#dots)"/>
+    <rect class="halo" width="1280" height="620" fill="url(#burst)"/>
+
+    <text class="sans" x="56" y="66" font-size="32" font-weight="600" fill="#eef2f6">15 years where a wrong number costs money</text>
+    <text class="sans" x="56" y="98" font-size="17" fill="#8291a0">and then I started counting</text>
+
+    <!-- the trajectory -->
+    <path id="arc" class="curve" pathLength="1000" d="M80 520 Q115 516 151 512 T222 496 T293 474 T364 447 T435 415 T505 380 T576 341 T647 298 T718 252 T789 203 T860 151 T900 120"
+          fill="none" stroke="url(#trail)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+
+    <!-- comet riding the curve -->
+    <g opacity="0">
+      <set attributeName="opacity" to="1" begin="0.3s"/>
+      <circle r="12" fill="#62cda0" opacity="0.25"/>
+      <circle r="5" fill="#eef2f6"/>
+      <animateMotion dur="3.4s" begin="0.3s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.42 0 0.58 1">
+        <mpath href="#arc"/>
+      </animateMotion>
+    </g>
+
+    <!-- stops: labels below and right of the curve, or above and left, never across it -->
+    <g class="sans">
+      <g class="stop s1">
+        <circle cx="80" cy="520" r="5" fill="#0b0f14" stroke="#8291a0" stroke-width="3"/>
+        <text class="mono" x="90" y="542" font-size="13" fill="#8291a0">2010</text>
+        <text x="90" y="562" font-size="15" fill="#eef2f6">EPAM</text>
+        <text x="90" y="578" font-size="12" fill="#8291a0">full stack: Java and JavaScript</text>
+      </g>
+      <g class="stop s2">
+        <circle cx="151" cy="512" r="5" fill="#0b0f14" stroke="#8291a0" stroke-width="3"/>
+        <text x="141" y="484" font-size="15" text-anchor="end" fill="#eef2f6">UpMyGame</text>
+        <text x="141" y="500" font-size="12" text-anchor="end" fill="#8291a0">startup consulting</text>
+      </g>
+      <g class="stop s3">
+        <circle cx="222" cy="496" r="5" fill="#0b0f14" stroke="#8291a0" stroke-width="3"/>
+        <text x="232" y="520" font-size="15" fill="#eef2f6">Rando4.me</text>
+        <text x="232" y="536" font-size="12" fill="#8291a0">open source, 10 years</text>
+      </g>
+      <g class="stop s4">
+        <circle cx="293" cy="474" r="5" fill="#0b0f14" stroke="#e8a860" stroke-width="3"/>
+        <text x="283" y="446" font-size="15" text-anchor="end" fill="#eef2f6">Ciklum</text>
+        <text x="283" y="462" font-size="12" text-anchor="end" fill="#8291a0">outstaffing, many projects</text>
+      </g>
+      <g class="stop s5">
+        <circle cx="364" cy="447" r="5" fill="#0b0f14" stroke="#e8a860" stroke-width="3"/>
+        <text x="374" y="471" font-size="15" fill="#eef2f6">HYLA Mobile</text>
+        <text x="374" y="487" font-size="12" fill="#8291a0">16,000+ stores</text>
+      </g>
+      <g class="stop s6">
+        <circle cx="435" cy="415" r="5" fill="#0b0f14" stroke="#e8a860" stroke-width="3"/>
+        <text x="425" y="387" font-size="15" text-anchor="end" fill="#eef2f6">Assurant</text>
+        <text x="425" y="403" font-size="12" text-anchor="end" fill="#8291a0">behind US carriers</text>
+      </g>
+      <g class="stop s7">
+        <circle cx="505" cy="380" r="5" fill="#0b0f14" stroke="#e8a860" stroke-width="3"/>
+        <text x="515" y="404" font-size="15" fill="#eef2f6">Modulr</text>
+        <text x="515" y="420" font-size="12" fill="#8291a0">UK banking payments</text>
+      </g>
+      <g class="stop s8">
+        <circle cx="576" cy="341" r="5" fill="#0b0f14" stroke="#e8a860" stroke-width="3"/>
+        <text x="566" y="313" font-size="15" text-anchor="end" fill="#eef2f6">Architecture consulting</text>
+        <text x="566" y="329" font-size="12" text-anchor="end" fill="#8291a0">platforms that outgrew their architecture</text>
+      </g>
+      <g class="stop s9">
+        <circle cx="647" cy="298" r="5" fill="#0b0f14" stroke="#7c88ff" stroke-width="3"/>
+        <text x="657" y="322" font-size="15" fill="#eef2f6">Belun</text>
+        <text x="657" y="338" font-size="12" fill="#8291a0">100+ free browser tools</text>
+      </g>
+      <g class="stop s10">
+        <circle cx="718" cy="252" r="5" fill="#0b0f14" stroke="#7c88ff" stroke-width="3"/>
+        <text x="708" y="224" font-size="15" text-anchor="end" fill="#eef2f6">whotop</text>
+        <text x="708" y="240" font-size="12" text-anchor="end" fill="#8291a0">open source CLI</text>
+      </g>
+      <g class="stop s11">
+        <circle cx="789" cy="203" r="5" fill="#0b0f14" stroke="#62cda0" stroke-width="3"/>
+        <text x="799" y="227" font-size="15" fill="#eef2f6">DScover</text>
+        <text x="799" y="243" font-size="12" fill="#8291a0">AI architect</text>
+      </g>
+      <g class="stop s12">
+        <circle cx="860" cy="151" r="5" fill="#0b0f14" stroke="#62cda0" stroke-width="3"/>
+        <text x="850" y="123" font-size="15" text-anchor="end" fill="#eef2f6">Adlega</text>
+        <text x="850" y="139" font-size="12" text-anchor="end" fill="#8291a0">AI CFO, co-founder</text>
+      </g>
+    </g>
+
+    <!-- the arrival point -->
+    <circle class="ring" cx="900" cy="120" r="8" fill="none" stroke="#62cda0" stroke-width="2"/>
+    <g class="pop n0"><circle cx="900" cy="120" r="8" fill="#62cda0" filter="url(#glow)"/></g>
+
+    <!-- now: the counters -->
+    <g class="sans">
+      <g class="pop n0">
+        <text class="mono" x="930" y="126" font-size="15" fill="#62cda0">2026 · research, open source</text>
+      </g>
+      <g class="pop n1">
+        <rect x="930" y="156" width="145" height="146" rx="14" fill="#10161e"/>
+        <text x="1002" y="240" font-size="72" font-weight="700" text-anchor="middle" fill="#62cda0" filter="url(#glow)">16</text>
+        <text x="1002" y="276" font-size="15" text-anchor="middle" fill="#eef2f6">open studies</text>
+      </g>
+      <g class="pop n2">
+        <rect x="1085" y="156" width="145" height="146" rx="14" fill="#10161e"/>
+        <text x="1157" y="240" font-size="72" font-weight="700" text-anchor="middle" fill="#7c88ff" filter="url(#glow)">16</text>
+        <text x="1157" y="276" font-size="15" text-anchor="middle" fill="#eef2f6">DOIs on Zenodo</text>
+      </g>
+      <g class="pop n3">
+        <rect x="930" y="314" width="145" height="146" rx="14" fill="#10161e"/>
+        <text x="1002" y="398" font-size="72" font-weight="700" text-anchor="middle" fill="#e8a860" filter="url(#glow)">11</text>
+        <text x="1002" y="434" font-size="15" text-anchor="middle" fill="#eef2f6">papers</text>
+      </g>
+      <g class="pop n4">
+        <rect x="1085" y="314" width="145" height="146" rx="14" fill="#10161e"/>
+        <text x="1157" y="398" font-size="72" font-weight="700" text-anchor="middle" fill="#e86c6c" filter="url(#glow)">28</text>
+        <text x="1157" y="434" font-size="14" text-anchor="middle" fill="#eef2f6">essays, 3 languages</text>
+      </g>
+    </g>
+
+    <text class="mono" x="56" y="602" font-size="14" fill="#8291a0">github.com/dimhold · dimhold.by</text>
+    <text class="sans" x="1230" y="602" font-size="14" text-anchor="end" fill="#7c88ff">made with ♥ by dimhold</text>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620">
+  <style>
+    .sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+    .mono { font-family: Consolas, 'SFMono-Regular', Menlo, 'Liberation Mono', monospace; }
+    .card { opacity: 0; animation: up 0.7s ease-out forwards; }
+    .c1 { animation-delay: 0.1s; } .c2 { animation-delay: 0.35s; } .c3 { animation-delay: 0.6s; }
+    .c4 { animation-delay: 0.85s; } .c5 { animation-delay: 1.1s; } .c6 { animation-delay: 1.35s; }
+    @keyframes up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .bar { transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: grow 1.2s ease-out forwards; }
+    .b1 { animation-delay: 0.5s; } .b2 { animation-delay: 0.75s; } .b3 { animation-delay: 1.0s; }
+    .b4 { animation-delay: 1.25s; } .b5 { animation-delay: 1.5s; } .b6 { animation-delay: 1.75s; }
+    @keyframes grow { to { transform: scaleX(1); } }
+  </style>
+  <defs><clipPath id="clip"><rect width="1280" height="620" rx="18"/></clipPath></defs>
+  <g clip-path="url(#clip)">
+    <rect width="1280" height="620" fill="#0b0f14"/>
+
+    <text class="sans" x="56" y="70" font-size="32" font-weight="600" fill="#eef2f6">What the measurements found</text>
+    <text class="sans" x="56" y="102" font-size="17" fill="#8291a0">Every number below is reproducible from a public repository with its data and scripts</text>
+
+    <!-- row 1 -->
+    <g transform="translate(56 132)"><g class="card c1">
+      <rect width="376" height="206" rx="12" fill="#10161e"/>
+      <text class="sans" x="24" y="64" font-size="50" font-weight="600" fill="#e86c6c">0 / 40</text>
+      <text class="sans" x="24" y="100" font-size="16" fill="#eef2f6">answers flagged a tool that returned</text>
+      <text class="sans" x="24" y="122" font-size="16" fill="#eef2f6">a wrong value quietly. Loud failure: 39 / 40</text>
+      <rect x="24" y="146" width="328" height="8" rx="4" fill="#1d2733"/>
+      <rect class="bar b1" x="24" y="146" width="320" height="8" rx="4" fill="#62cda0"/>
+      <text class="mono" x="24" y="186" font-size="14" fill="#8291a0">tool-failure</text>
+    </g></g>
+
+    <g transform="translate(452 132)"><g class="card c2">
+      <rect width="376" height="206" rx="12" fill="#10161e"/>
+      <text class="sans" x="24" y="64" font-size="50" font-weight="600" fill="#e86c6c">20 / 20</text>
+      <text class="sans" x="24" y="100" font-size="16" fill="#eef2f6">times 2 models repeated a misstated</text>
+      <text class="sans" x="24" y="122" font-size="16" fill="#eef2f6">subtotal in a P&amp;L as fact. One clause: 10 / 10</text>
+      <rect x="24" y="146" width="328" height="8" rx="4" fill="#1d2733"/>
+      <rect class="bar b2" x="24" y="146" width="328" height="8" rx="4" fill="#e86c6c"/>
+      <text class="mono" x="24" y="186" font-size="14" fill="#8291a0">silent-books</text>
+    </g></g>
+
+    <g transform="translate(848 132)"><g class="card c3">
+      <rect width="376" height="206" rx="12" fill="#10161e"/>
+      <text class="sans" x="24" y="64" font-size="50" font-weight="600" fill="#62cda0">330 / 330</text>
+      <text class="sans" x="24" y="100" font-size="16" fill="#eef2f6">right when code does the math for the</text>
+      <text class="sans" x="24" y="122" font-size="16" fill="#eef2f6">model. Until a unit needs converting: 71.5%</text>
+      <rect x="24" y="146" width="328" height="8" rx="4" fill="#1d2733"/>
+      <rect class="bar b3" x="24" y="146" width="235" height="8" rx="4" fill="#e8a860"/>
+      <text class="mono" x="24" y="186" font-size="14" fill="#8291a0">boundary-split · 11 models, 4 labs</text>
+    </g></g>
+
+    <!-- row 2 -->
+    <g transform="translate(56 358)"><g class="card c4">
+      <rect width="376" height="206" rx="12" fill="#10161e"/>
+      <text class="sans" x="24" y="64" font-size="50" font-weight="600" fill="#e8a860">84.9%</text>
+      <text class="sans" x="24" y="100" font-size="16" fill="#eef2f6">of 4,296,340 npm packages list exactly</text>
+      <text class="sans" x="24" y="122" font-size="16" fill="#eef2f6">one maintainer. The whole registry, counted</text>
+      <rect x="24" y="146" width="328" height="8" rx="4" fill="#1d2733"/>
+      <rect class="bar b4" x="24" y="146" width="278" height="8" rx="4" fill="#e8a860"/>
+      <text class="mono" x="24" y="186" font-size="14" fill="#8291a0">npm-registry-census</text>
+    </g></g>
+
+    <g transform="translate(452 358)"><g class="card c5">
+      <rect width="376" height="206" rx="12" fill="#10161e"/>
+      <text class="sans" x="24" y="64" font-size="50" font-weight="600" fill="#e8a860">14 to 17%</text>
+      <text class="sans" x="24" y="100" font-size="16" fill="#eef2f6">of node_modules is a second copy of a</text>
+      <text class="sans" x="24" y="122" font-size="16" fill="#eef2f6">package already installed, measured on disk</text>
+      <rect x="24" y="146" width="328" height="8" rx="4" fill="#1d2733"/>
+      <rect class="bar b5" x="24" y="146" width="51" height="8" rx="4" fill="#e8a860"/>
+      <text class="mono" x="24" y="186" font-size="14" fill="#8291a0">install-graph</text>
+    </g></g>
+
+    <g transform="translate(848 358)"><g class="card c6">
+      <rect width="376" height="206" rx="12" fill="#10161e"/>
+      <text class="sans" x="24" y="64" font-size="50" font-weight="600" fill="#7c88ff">2.8x</text>
+      <text class="sans" x="24" y="100" font-size="16" fill="#eef2f6">slower inserts with random UUIDs on</text>
+      <text class="sans" x="24" y="122" font-size="16" fill="#eef2f6">Postgres at 20M rows. A replication</text>
+      <rect x="24" y="146" width="328" height="8" rx="4" fill="#1d2733"/>
+      <rect class="bar b6" x="24" y="146" width="117" height="8" rx="4" fill="#7c88ff"/>
+      <rect class="bar b6" x="24" y="146" width="328" height="8" rx="4" fill="#7c88ff" fill-opacity="0.35"/>
+      <text class="mono" x="24" y="186" font-size="14" fill="#8291a0">key-order</text>
+    </g></g>
+
+    <text class="mono" x="56" y="598" font-size="14" fill="#8291a0">github.com/dimhold · dimhold.by</text>
+    <text class="sans" x="1224" y="598" font-size="14" text-anchor="end" fill="#7c88ff">made with ♥ by dimhold</text>
+  </g>
+</svg>
