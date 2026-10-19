@@ -1,6 +1,6 @@
 <img src="header.svg" alt="Dmitriy Semenkevich. Software architect. I measure what software and AI really do." width="100%">
 
-I design systems where a wrong number costs real money. Banking payments at a UK fintech, the platform that takes old phones back in 16,000 stores, a French govtech service that files documents for citizens. Now Adlega, an AI CFO built on one rule: the model never does the math.
+I design systems where a wrong number costs real money. Banking payments at a UK fintech and the platform that takes old phones back in 16,000 stores. Now Adlega, an AI CFO built on one rule: the model never does the math.
 
 Building with AI every day showed me how often it sounds sure and is wrong. So I started measuring it. Every study below ships its raw data and scripts. Most also have a DOI. When the question was already answered by someone else, the repository says so and links to them.
 
