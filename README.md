@@ -1,5 +1,7 @@
 <img src="header.svg" alt="Dmitriy Semenkevich. Software architect. I measure what software and AI really do." width="100%">
 
+**Dmitriy Semenkevich** (dimhold) · Дмитрий Семенкевич · Дзмітрый Семенкевіч · Warsaw, from Belarus
+
 I design systems where a wrong number costs real money. Banking payments at a UK fintech and the platform that takes old phones back in 16,000 stores. Now Adlega, an AI CFO built on one rule: the model never does the math.
 
 Building with AI every day showed me how often it sounds sure and is wrong. So I started measuring it. Every study below ships its raw data and scripts. Most also have a DOI. When the question was already answered by someone else, the repository says so and links to them.
@@ -11,6 +13,7 @@ Building with AI every day showed me how often it sounds sure and is wrong. So I
 | | |
 |---|---|
 | **AI agents** | [tool-failure](https://github.com/dimhold/tool-failure) · [tool-honesty](https://github.com/dimhold/tool-honesty) · [tool-reach](https://github.com/dimhold/tool-reach) · [fault-labs](https://github.com/dimhold/fault-labs) · [fault-mcp](https://github.com/dimhold/fault-mcp) |
+| **AI models** | [cutoff-probe](https://github.com/dimhold/cutoff-probe) · [fixture-entropy](https://github.com/dimhold/fixture-entropy) |
 | **AI in finance** | [silent-books](https://github.com/dimhold/silent-books) · [boundary-split](https://github.com/dimhold/boundary-split) · [llm-arithmetic](https://github.com/dimhold/llm-arithmetic) · [stat-revision](https://github.com/dimhold/stat-revision) |
 | **npm supply chain** | [npm-registry-census](https://github.com/dimhold/npm-registry-census) · [install-graph](https://github.com/dimhold/install-graph) · [dep-weight](https://github.com/dimhold/dep-weight) |
 | **Postgres** | [key-order](https://github.com/dimhold/key-order) · [preview-cost](https://github.com/dimhold/preview-cost) |
